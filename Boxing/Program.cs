@@ -7,7 +7,9 @@ namespace Boxing
     {
         static void Main(string[] args)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "Data\\0\\100_cl.json");
+            string path = Directory.GetCurrentDirectory();
+            path = path.Remove(path.Length - 10, 10);
+            path = Path.Combine(path, "Data\\0\\100_cl.json");
             var json = File.ReadAllText(path);
 
             var data = Newtonsoft.Json.JsonConvert.DeserializeObject <Models.Input_JSON>(json);
