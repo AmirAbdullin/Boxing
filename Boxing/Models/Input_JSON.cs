@@ -20,6 +20,10 @@ namespace Boxing.Models
         public int Mass { get; set; }
         [Newtonsoft.Json.JsonProperty("size")]
         public int[] Size { get; set; }
+        public void Write_ALL()
+        {
+            Console.WriteLine($"ID:{Id}\n MASS: {Mass}\n Size: {Size[0]}, {Size[1]}, {Size[2]}\n\n");
+        }
     }
 
     public class Cargo_Groups
@@ -36,6 +40,11 @@ namespace Boxing.Models
         public int Count { get; set; }
         [Newtonsoft.Json.JsonProperty("group_id")]
         public string Group_id { get; set; }
+        public void Write_ALL()
+        {
+            Console.WriteLine($"ID:{Id}\n MASS: {Mass}\n Size: {Size[0]}, {Size[1]}, {Size[2]}\n" +
+                $"Sort: {Sort}\n Count: {Count}\n Group_id: {Group_id}\n\n");
+        }
     }
 
 }
